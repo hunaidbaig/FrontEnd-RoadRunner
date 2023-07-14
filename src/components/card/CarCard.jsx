@@ -1,6 +1,8 @@
 import { Button, Col, Card } from 'antd';
-import Meta from 'antd/es/card/Meta';
 import { Link } from 'react-router-dom';
+
+
+const { Meta } = Card;
 
 const CarCard = ({car}) => {
 
@@ -21,18 +23,18 @@ const CarCard = ({car}) => {
                             style={{ height: '80px', cursor: 'pointer' }}
                             // avatar={<Avatar src="https://xsgames.co/randomusers/avatar.php?g=pixel" />}
                             title={car.name }
-                            description={car.shortDesc}
+                            description={car.shortdesc}
                         />
                     </Link>
                     <div className="additional">
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <p>Rental Price:</p>
-                        <p>{car.price}</p>
+                        <p>{car.rentfee}</p>
                     </div>
 
                     </div>
 
-                    <Link to={'/rental-form'}>
+                    <Link to={'/rental-form'} state={car}>
                         <Button style={{ marginTop: '10px' }} type="primary">
                             Rent Me Now
                         </Button>
